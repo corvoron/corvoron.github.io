@@ -1,0 +1,83 @@
+
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html  xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<meta http-equiv="Content-Language" content=""/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>Getting Started Guide</title>
+<meta name="description" content="This will help you to navigate the site" />
+<meta name="keywords" content="Narrative Report, Getting Started" />
+<base target="popup"/>
+<link rel="stylesheet" href="style.css" type="text/css"/>
+<script type='text/javascript' language="JavaScript" src="scripts/svgcheck.js"></script>
+<script type='text/vbscript' language="VBScript" src="scripts/svgcheck.vbs"></script>
+<script type='text/javascript' src="scripts/jquery.min.js"></script>
+<script type='text/javascript' language="JavaScript" src="scripts/script.js"></script>
+<script type='text/javascript' language="JavaScript">
+        var mapInfo = {File:"help.svg", Bounds:[-389,-688,411,-180],SVG:true};
+        var embed, svgdoc, svgwin, pdfparam;
+        $(function () {
+            document.getElementById("svgpdf").innerHTML = '<EMBED src="' + mapInfo.File + '" id="svgEmbed" height="100%" width="100%" type="image/svg+xml" border="2"/>';
+    
+                    document.getElementById("svgpdf").innerHTML = '<EMBED src="' + mapInfo.File + '" id="svgEmbed" height="508px" width="800px" type="image/svg+xml" border="2"/>';
+                    embed = document.getElementById('svgEmbed');
+                    }
+        );
+        
+</script>
+
+</head>
+<body class='gno-detail' onload="javascript:PageInit(true, '');">
+<div class='clearfix'>
+</div>
+<div class='floatright'>
+<img src='images/expand2.gif' class='toggle24' name='toggle2' onclick='javascript:ToggleTree(this.name,"2");' alt='Развернуть/свернуть все' title='Развернуть/свернуть все' />
+</div>
+<a name='Help'></a><h4>Необходима помощь в начале работы?</h4>
+Этот веб-сайт использует несколько способов представления информации об истории семьи. <br /> Вверхнее навигационное меню с иконками позволяет быстро перемещаться между разными категориями: персоны, семьи, места, фото и т.д. <br /> Информация представлена в виде повествования, но также присутствуют такие дополнения как: шкалы времени, древо предков, семейные диаграммы и географические места на Google Maps. <br /> <br /><br />Существует множество интерактивных функций, помогающих Вам перемещаться внутри данного веб-сайта. <br /> <br />Нажмите на иконку &#39;<img class='top' src='images/arrow2.show.gif' alt=''/>&#39; для открытия каждой секции отдельно или на большую иконку <img class='bottom' src='images/expand2.gif' alt=''/> справа вверху для открытия всех секций сразу. <br /><br />
+<ul class='xT'><li class='xT2-c xT-h' onclick='xTclk(event,"2")'>
+
+<a name='Navigation_Icons'></a><h4 class='xT-i inline'>Навигационные иконки (меню)</h4><ul class='xT-h'><li>
+<a name='nav00001'></a><div class='clearleft'>
+Навигационные иконки расположены в верхнем левом углу. Наведите курсор мыши на определенную иконку для появлении текстовой подсказки.<br /><br /><br /> <img class='bottom button32' src='images/home32.gif' align='middle' alt='' title=''/> Если Вы обнаружили, что заблудились на сайте, нажмите на иконку Домой (На главную) для перехода на начальную страницу.<br /><br /><br /> <img class='bottom button32' src='images/individuals32.gif' align='middle' alt='' title=''/> Один из способов изучения сайта, использовать Алфавитный список персон, сгруппированный по фамилиям. Нажмите в списке на конкретную персону для просмотра дополнительной информации по ней.<br /><br /><br /> <img class='bottom button32' src='images/families32.gif' align='middle' alt='' title=''/> При нажатии на иконку Семьи будет показан список Фамилий всех браков/союзов.<br /><br /><br /> <img class='bottom button32' src='images/trees32.gif' align='middle' alt='' title=''/> Возможно более простым путем будет начать с Фамильной диаграммы.<br /><br /><br /> <img class='bottom button32' src='images/map_pin32.gif' align='middle' alt='' title=''/> Нажатие на иконку &#39;Google Maps (Карты)&#39; отобразит все географические объекты, заведенные в GenoPro, но при условии что у них указаны широта и долгота объектов. Иконка <img class='top' src='images/pin.gif' alt=''/> отображенная около имени на персональных или семейных страницах говорит о том, что для данной персоны или семьи имеется связь с географическими местами на Google Maps.
+<br />
+<br />
+</div>
+</li></ul></li></ul>
+<br/><ul class='xT'><li class='xT2-c xT-h' onclick='xTclk(event,"2")'>
+<a name='Family_Tree_Diagrams'></a><h4 class='xT-i inline'>Семейные древа в виде диаграмм</h4><ul class='xT-h'><li>
+<a name='tree00001'></a><div class='clearleft'></div>
+Пример семейного древа в виде 'диаграммы' показан ниже.
+<br />
+<div id="svgpdf"></div>
+<br />
+<b>Символы</b>
+<br />
+Мужчины отображаются в виде квадрата, а женщины обычно в виде круга.<br /> <br />Перечеркнутый символ говорит о смерти персоны.<br /> <br />Если известны даты рождения и смерти, то внутри символа будет отображен возраст или кол-во прожитых лет..
+<br />
+<br /><b>Соглашения (договоренности)</b>
+<br />
+В случае разнополых взаимоотношений мужчина размещается слева, женщины справа. При последующих браках мужчины, следующие супруги размещаются правее <br /> и при последующих браках женщины, следующие супруги размещаются левее. В этом случае первые супруги всегда расположены более близко друг к другу чем последующие.<br /> <br />Старший ребенок в семье находится всегда слева, все последующие дети размещаются последовательно слева направо. <br />Более подробную информацию и примеры можно найти на странице <a href='http://www.genopro.com/genogram/' target='_blank'>&#39;Введение в Диаграммы (Introduction to the Genogram)&#39;</a>
+<br/>
+<br/><b>Перемещение по древу</b>
+<br/>
+Семейная диаграмма может быть разделена на несколько отдельных диаграмм или поддиаграмм для облегчения просмотра. Диаграмы могут быть отображены в 2-х форматах.<br /> PDF формат лучше подходит для печати или для браузеров без возможности просмотра формата SVG. SVG формат - интерактивный. Там где браузер позволяет использовать оба формата, нажатием на иконку с название формата PDF или SVG можно переключаться между ними.<br /><br /><br /> При использовании формата SVG при нажатии на символ персоны - Вам будет показана страница с информацией по этой персоне. Нажимая на линию брака/союза - Вам будет показана страница с информацией по этому союзу/браку. <br /> Персоны подсвеченные голубым и подчеркнутые снизу - являются ссылками для перехода на другие семейные диаграммы, нажав на них Вы перейдете на следующую семейную диаграмму.
+<br/>
+<br/>
+</li></ul></li></ul>
+<br/><ul class='xT'><li class='xT2-c xT-h' onclick='xTclk(event,"2")'>
+<a name='Individuals_Page'></a><h4 class='xT-i inline'>Страницы персон</h4><ul class='xT-h'><li>
+<a name='ind00001'></a><div class='clearleft'></div>
+Каждая персона имеет отдельную страницу в отчете. На персональной странице отображается информация о родителях, бабушках и дедушках, братьях и сестрах с ссылками на каждого, также отображаются фотографии и информация о браках/союзах.<br /> Дополнительно отображается контактная информация, места проживания, информация об образовании, временная шкала и древо прямых предков..&nbsp;
+<br/>
+<br/>
+</li></ul></li></ul>
+<br />
+<div class='clear'></div>
+<div id='divFrameset' class='hide'> <hr /><p><br />
+This page is within a frameset. <b><a target='_top' href='default.htm'>View the entire genealogy report of </a></b>, or <a href='toc_individuals.htm'>surname index</a> or <a href='home.htm'>report summary</a>.<br /><a href="http://www.genopro.com/" title="Draw your genealogy tree" target="_Blank">Drawing a Family Tree</a>.</p><hr /><br /><p class='aligncenter'><small>Copyright © 2011 GenoPro Inc. All rights reserved.</small></p></div>
+</body>
+</html>

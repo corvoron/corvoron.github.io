@@ -1,0 +1,38 @@
+/* Narrative Report Theme CSS file
+ the classes gno-heading, gno-index, gno-detail, anbd gno-popup defined below are applied to <body> tags of all pages thatare 
+ displayed in the heading, toc, detail and popup frames respectively.
+ 
+ all images must be loaded from the reports images folder. Any non default images must be present in the theme folder
+ and referenced in the files.txt file and will be automatically copied to the report's images folder by the skin.
+
+*/
+
+/* the line below removes frame borders. This cannot be done via CSS but the text below is 
+   detected in the skin and acted upon by setting border="0" in the frameset tag in default.htm.
+   
+            set frameborder=0
+            
+*/
+
+/* GreenLeaf by HarryCaper 2011.01.27 */
+
+body { font-size: 10pt; font-family: Arial, Helvetica; margin-top:0px;}
+body.gno-heading {background-color: #DAE4CB; background: #DAE4CB url(images/greenleaf.jpg) no-repeat fixed right;}
+body.gno-index {background-color: #DAE4CB; background: #DAE4CB; margin: 0px;}
+body.gno-detail {background-color: #DAE4CB; background: #DAE4CB url(images/greengradient.jpg) repeat-y fixed right; margin-left:0px; padding-left:10px;}
+body.gno-popup {background-color: #DAE4CB; background: #DAE4CB url(images/greengradient.jpg) repeat-y fixed right;}
+
+/*  This file can also contain any custom stylesheet file contents used in earlier releases of the skin
+*/
+
+img.button32,img.button24 {background:none;}
+
+h1 { color: #556B2F; font-size: 14pt; }
+h2 { color: #556B2F; font-size: 12pt; } 
+h3 { color: #556B2F; font-size: 11pt }
+
+a:link { color: #228B22; text-decoration: none; }
+a:visited { color: #228B22; text-decoration: none; }
+a:active { color: #228B22; text-decoration: none; }
+a:hover { color: #228B22; text-decoration: underline; }
+

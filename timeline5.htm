@@ -1,0 +1,61 @@
+
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html  xmlns='http://www.w3.org/1999/xhtml'>
+	<head>
+		<meta http-equiv="Content-Language" content="ru"/>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<title></title>
+		<link rel="stylesheet" href="style.css" type="text/css"/>
+		<script type='text/javascript'>
+			Timeline_ajax_url='timeline/ajax/simile-ajax-api.js';
+			Timeline_urlPrefix='timeline/';
+			Timeline_parameters='bundle=true';
+		</script>
+		<script src="timeline/timeline-api.js" type="text/javascript"></script>
+		<script type='text/javascript' src="scripts/jquery.min.js"></script>
+		<script src="scripts/script.js" type="text/javascript"></script>
+		<script  type="text/javascript">
+            SimileAjax.History.enabled = false; // prevent spurious alerts for __History__.html with timelines
+			var tl, json =
+{
+'events' : [
+
+{ 'start' : '24 Sep 1979', 'end' : '30 Jul 2015', 'isDuration' : 'false', 'title' : 'Денис Николаевич Барабаш \u202D1979 - \u202C', 'icon' : 'images/gender_M.gif', 'color' : '#1E90FF', 'link' : 'ind00030.htm','description' : 'Дата рождения:\x20 24 сентября 1979 г.'},
+{ 'start' : '25 Sep 1986', 'end' : '30 Jul 2015', 'isDuration' : 'false', 'title' : 'Марина Николаевна Барабаш \u202D1986 - \u202C', 'icon' : 'images/gender_F.gif', 'color' : '#DC143C', 'link' : 'ind00051.htm','description' : 'Дата рождения:\x20 25 сентября 1986 г.'},{'title' : 'Помощь', 'start' : '31 Jul 2015', 'end' : '30 Jul 2065', 'textColor' : 'black', 'color' : 'white', 'isDuration' : 'false', 'icon' : 'images/info.gif', 'description' : 'Нажмите на шкалу времени и перемещайте ее с помощью мыши влево – вправо или нажмите клавиши: \x27Home\x27 для перемещения в начало, \x27End\x27 для перемещения в конец; \x27Page Up\x27 и \x27Page Down\x27 для перемещения влево – вправо по странице или «стрелки» для плавного движения влево – вправо. Нажмите на персону или на союз для получения информации в сплывающем окне. Нажмите на заголовок в сплывающем окне для получения дополнительной информации о персоне или союзе.'}],
+'nowTag' : ' сейчас',
+'subtitle': 'Фамильная шкала времени: БАРАБАШ',
+'date' : '30 Jul 1965'}
+  
+			;
+			var tlParam = {
+				data : true,
+				duration : true, 
+				wrapEvents : false
+			};
+			$(function () {
+				timeLineOnLoad(tlParam);
+				window.onresize=timeLineOnResize(tlParam);
+			});
+		</script>
+	<base target="detail"/>
+  
+	</head>
+	<body class='gno-popup'>
+	<div class='curvyboxbackground'>
+ <div class='curvycorners_box'>
+  <div class='curvycorners_top'><div></div></div>
+   <div class='curvycorners_content'>
+
+		<h4 id='subtitle'> </h4>
+		<div class='clear' id='constrainer' style='overflow: auto;'  >
+				<div id="timeline0" style="height: 100%;border: 1px solid #aaa;">
+				</div>
+		</div>
+		   </div>
+  <div class='curvycorners_bottom'><div></div></div>
+ </div>
+</div>
+
+	</body>
+</html>

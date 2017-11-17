@@ -1,0 +1,64 @@
+
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html  xmlns='http://www.w3.org/1999/xhtml'>
+	<head>
+		<meta http-equiv="Content-Language" content="ru"/>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<title></title>
+		<link rel="stylesheet" href="style.css" type="text/css"/>
+		<script type='text/javascript'>
+			Timeline_ajax_url='timeline/ajax/simile-ajax-api.js';
+			Timeline_urlPrefix='timeline/';
+			Timeline_parameters='bundle=true';
+		</script>
+		<script src="timeline/timeline-api.js" type="text/javascript"></script>
+		<script type='text/javascript' src="scripts/jquery.min.js"></script>
+		<script src="scripts/script.js" type="text/javascript"></script>
+		<script  type="text/javascript">
+            SimileAjax.History.enabled = false; // prevent spurious alerts for __History__.html with timelines
+			var tl, json =
+{
+'events' : [
+
+{ 'start' : '14 Jan 1956', 'end' : '22 Apr 2010', 'isDuration' : 'false', 'title' : 'Нина Дмитриевна Штановская (Зубенко) \u202D1956 - 2010\u202C', 'icon' : 'images/gender_F.gif', 'color' : '#DC143C', 'link' : 'ind00089.htm','description' : 'Дата рождения:\x20 14 января 1956 г. Смерть наступила\x20 в 54-летнем возрасте\x20\x20 22 апреля 2010 г.'},
+{ 'start' : '11 Dec 1923', 'end' : '29 Jan 2002', 'isDuration' : 'false', 'title' : 'Дмитрий Петрович Штановский \u202D1923 - 2002\u202C', 'icon' : 'images/gender_M.gif', 'color' : '#1E90FF', 'link' : 'ind00098.htm','description' : 'Дата рождения:\x20 11 декабря 1923 г. Смерть наступила от несчастного случая, Сбила машина, в 78-летнем возрасте\x20\x20 29 января 2002 г\x20 Киев.'},
+{ 'start' : '21 Apr 1916', 'end' : '1 May 2002', 'isDuration' : 'false', 'title' : 'Зинаида Иларионовна (Штановская) \u202D1916 - 2002\u202C', 'icon' : 'images/gender_F.gif', 'color' : '#DC143C', 'link' : 'ind00099.htm','description' : 'Дата и место рождения:\x20 21 апреля 1916 г на Хмелевка. Смерть наступила\x20 в 86-летнем возрасте\x20\x20 1 мая 2002 г.'},
+{ 'start' : '30 Dec 2013', 'title' : 'Галина Леонтьевна Штановская (Кобрина) ум. \u202D2013\u202C', 'icon' : 'images/gender_FX.gif', 'color' : '#DC143C', 'link' : 'ind00118.htm','description' : 'Смерть наступила от сердечной недостаточности\x20 30 декабря 2013 г на Старые Петровцы.'},
+{ 'start' : '30 Jan 2014', 'title' : 'Татьяна Петровна Волкотруб (Козырь) ум. \u202D2014\u202C', 'icon' : 'images/gender_FX.gif', 'color' : '#DC143C', 'link' : 'ind00119.htm','description' : 'Смерть наступила\x20\x20 30 января 2014 г на Старые Петровцы.'},{'title' : 'Помощь', 'start' : '31 Jan 2014', 'end' : '30 Jan 2064', 'textColor' : 'black', 'color' : 'white', 'isDuration' : 'false', 'icon' : 'images/info.gif', 'description' : 'Нажмите на шкалу времени и перемещайте ее с помощью мыши влево – вправо или нажмите клавиши: \x27Home\x27 для перемещения в начало, \x27End\x27 для перемещения в конец; \x27Page Up\x27 и \x27Page Down\x27 для перемещения влево – вправо по странице или «стрелки» для плавного движения влево – вправо. Нажмите на персону или на союз для получения информации в сплывающем окне. Нажмите на заголовок в сплывающем окне для получения дополнительной информации о персоне или союзе.'}],
+'nowTag' : ' сейчас',
+'subtitle': 'Фамильная шкала времени: ШТАНОВСКИЕ',
+'date' : '30 Jan 1964'}
+  
+			;
+			var tlParam = {
+				data : true,
+				duration : true, 
+				wrapEvents : false
+			};
+			$(function () {
+				timeLineOnLoad(tlParam);
+				window.onresize=timeLineOnResize(tlParam);
+			});
+		</script>
+	<base target="detail"/>
+  
+	</head>
+	<body class='gno-popup'>
+	<div class='curvyboxbackground'>
+ <div class='curvycorners_box'>
+  <div class='curvycorners_top'><div></div></div>
+   <div class='curvycorners_content'>
+
+		<h4 id='subtitle'> </h4>
+		<div class='clear' id='constrainer' style='overflow: auto;'  >
+				<div id="timeline0" style="height: 100%;border: 1px solid #aaa;">
+				</div>
+		</div>
+		   </div>
+  <div class='curvycorners_bottom'><div></div></div>
+ </div>
+</div>
+
+	</body>
+</html>

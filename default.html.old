@@ -1,0 +1,229 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html  xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<meta http-equiv="Content-Language" content="ru"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>Дерево семьи</title>
+<meta name="description" content="Summary report of Дерево семьи containing 141 individuals and 48 families. This report describes the genealogy and ancestry of families&nbsp;Райская, Райский, Зубенко, Хоруженко, Наседкин, Наседкина, Мороз, Штановская, Маслов, Черноусова." />
+<meta name="keywords" content="Family Report, Genealogy Report, Family Tree, Family Search" />
+<link rel="stylesheet" href="style.css" type="text/css"/>
+<script type='text/javascript' src="scripts/jquery.min.js"></script>
+<script type='text/javascript' src="scripts/script.js"></script>
+<script type="text/javascript">
+
+var basepath, setRhs = "*,65%", minRhs="0,*", setLower="30%,*", saveLower, minLower="0,*", setPopup,
+	frameLower, frameRhs, maxPopups=false;
+
+
+$.cookie('origin', window.location.href);
+
+basepath = window.location.pathname;
+$.cookie('basepath', basepath.substr(0, basepath.lastIndexOf('/')));
+
+if (!maxPopups) {
+	if (window.location.search.substring(1) == 'reloaded') {
+		maxPopups = $.cookie('maxPopups') == 'true';
+	} else if (SmartPhone.isAny() || smallScreen()) {
+		maxPopups = confirm('Оптимизация представления для небольших экранов?');
+		$.cookie('maxPopups', maxPopups ? 'true' : 'false', 1);
+	}
+}	
+if (maxPopups ) {
+	setPopup = '100%';
+	saveLower=saveLower2="100%,0";
+} else {
+	setPopup ='65%';
+	saveLower=saveLower2="30%,*";
+}
+
+$.cookie('popupToggleState',"images/maximize.gif");
+$.cookie('tocStateToggle', (true || maxPopups ? 'Close' : 'Open'));
+/*
+$.cookie('tocOpensrc', "images/toc_open.gif");
+$.cookie('tocOpentitle', "Этот фрейм останется открытым после выбора объекта из списка. Нажмите для изменения.");
+$.cookie('tocOpenalt', $.cookie('tocOpentitle'));
+$.cookie('tocClosesrc', "images/toc_close.gif");
+$.cookie('tocClosetitle', "Этот фрейм закроется после выбора объекта из списка. Нажмите для изменения.");
+$.cookie('tocClosealt', $.cookie('tocClosetitle'));
+$.cookie('tocAutoHide', true);
+$.cookie('popupTitle', '');
+$.cookie('popupHTML', '');
+*/
+	var frameBorders = true;
+	var iconMenu = true;
+
+var actions = {
+	title : 		function(msg) {
+						window.document.title = msg;
+					},
+	hidePopup : 	function(msg) {
+						document.getElementById('rhs').rows="*,0";
+						$.cookie('popupToggleState', "images/maximize.gif");
+						$.cookie('popupTitle', '');
+						$.cookie('popupHTML', '');
+						window.frames["popup"].location.href = (msg ? msg :'popup.htm');
+					},
+	maxPopup : 		function() {
+						if (frameLower.cols != "0,*") saveLower = frameLower.cols;
+						frameLower.cols = "0,*";
+						frameRhs.rows = "0,*";
+						$.cookie('popupToggleState', "images/restore.gif");
+					},
+	restorePopup : 	function() {
+						if ($.cookie('popupToggleState') == "images/restore.gif") {
+							frameRhs.rows = setRhs;
+							$.cookie('popupToggleState', "images/maximize.gif");
+						}
+					},
+	openPopup : 	function(popup) {
+						window.frames["popup"].location.href = popup;
+						actions.showPopup();
+					},
+	showPopup : 	function(msg) {
+						if ($.cookie('popupToggleState') == "images/restore.gif") {  // if popup previously maximised, reset it to normal size.
+							document.getElementById('rhs').rows = setRhs;
+						}
+						var pc=(msg ? msg : setPopup);
+						if(maxPopups || document.getElementById('rhs').rows=="*,0" || pc != "")      // don't change if already changed by user
+						{	
+							document.getElementById('rhs').rows="*,"+pc;
+							$.cookie('popupToggleState', (pc == '100%' ?  "images/restore.gif" : "images/maximize.gif"));
+						}
+					},
+	hideMap	  : 	function() {
+						actions.hidePopup('popup.htm');
+					},
+	hideTOC :		function(popup) {
+						if (frameLower.cols && frameLower.cols != minLower) saveLower = frameLower.cols;
+						frameLower.cols = minLower;
+						if (popup) action.showPopup(popup);
+					},
+	showTOC :		function() {
+						document.getElementById('lower').cols = saveLower;
+					}
+	}
+
+$.receiveMessage(function(e){
+	// console.log('receiveMessage', e.data); //debug
+
+	var parts =e.data.split('=');
+	var msg = (parts.length > 1 ? e.data.substr(parts[0].length+1) : null);
+	if (parts[0] in actions) {
+		actions[parts[0]](msg);
+	} else {
+		alert('missing action for '+parts[0]);
+	}
+/*
+	switch (parts[0]) {
+		case 'title' :
+			window.document.title = msg;
+			break;
+			
+		case 'showPopup' :
+			break;
+		case 'tocPopupShow':
+			console.log('tocPopupShow1');
+			if (msg.substr(0,1) == 'Y') {
+			console.log('tocPopupShow2');
+				var lowerFrame = document.getElementById('lower');
+				if (lowerFrame.cols && lowerFrame.cols != minLower) saveLower = lowerFrame.cols;
+				lowerFrame.cols = minLower;
+			}
+			console.log($.cookie('popupToggleState'),saveLower2, saveRhs2);
+			//if ($.cookie('popupToggleState') != "images/maximize.gif") {
+				document.getElementById('lower').cols = saveLower2;
+				document.getElementById('rhs').rows = saveRhs2;
+				$.cookie('popupToggleState', "images/maximize.gif");
+			//}
+			window.frames["popup"].location.href = msg.substr(1);
+			break;
+		case 'tocPopupHide':
+		case 'hidePopup':
+			break;
+		case 'setpopup':
+			window.frames["popup"].location.href = (msg ? msg :'popup.htm');
+			break;
+		case 'togglePopup':
+			break;
+		case 'restorePopup':
+			break;
+		case 'hideMap':
+			break;
+		case 'tocHide':
+			var lowerFrame = document.getElementById('lower');
+			if (lowerFrame.cols && lowerFrame.cols != minLower) saveLower = lowerFrame.cols;
+			lowerFrame.cols = minLower;
+			break;
+		case 'tocShow':
+			break;
+		default:
+			alert('missing action for '+parts[0]);
+		}
+*/
+});
+
+// Open an individual page if specified in the querystring or referrer
+function HomePageInit() {
+  //	HISTORY
+  //	12-Oct-2006	GenoPro			Creation
+
+	// check if a url is specify in the querystring
+	var indexPageToLoad = location.search.indexOf("page=");
+	if (indexPageToLoad != -1) {
+		var pageToLoad = location.search.substring(indexPageToLoad + 5); // page= is 5 characters width
+		self.frames['detail'].location = pageToLoad;
+	}
+}
+function fixFrameSet(framesetObj, topFrame) {
+         var rows = framesetObj.getAttribute("rows"), cols = framesetObj.getAttribute("cols"); 
+         if (frameBorders) {
+            framesetObj.setAttribute("border","2");
+            framesetObj.setAttribute("framespacing","1");
+         }else{
+            framesetObj.setAttribute("framespacing","0");
+            framesetObj.setAttribute("border","0");
+         };
+         if (rows) framesetObj.setAttribute("rows", rows);
+         if (cols) framesetObj.setAttribute("cols", cols);
+         if (topFrame) {
+            fixFrameSet(document.getElementById("lower"), false);
+            fixFrameSet(document.getElementById("rhs"), false);
+         }
+}
+$(function () {
+		fixFrameSet(document.body, true);
+		document.getElementById("rhs").rows="*,1";
+		document.getElementById("rhs").rows="*,0";
+		frameLower = document.getElementById('lower');
+		frameRhs = document.getElementById('rhs');
+}
+);
+</script>
+</head>
+<frameset id="outer" rows="80,*" onload="javascript:HomePageInit();">
+    <frame name="heading" src="heading.htm" scrolling="no" style="margin-width:2px;border-color:silver;"/>
+    <frameset id="lower" cols="0,*">
+        <frame style="margin-width:2px;border-color:silver;" name="toc" src="toc_individuals.htm" marginwidth='10' marginheight='15'/>
+    		<frameset id="rhs" rows="*,0">
+    			<frame style="margin-width:2px;border-color:silver;" name="detail" id="detail" src="home.htm" scrolling="auto" marginwidth='5' marginheight='15'/> 
+    			<frame style="margin-width:2px;border-color:silver;" name="popup" id="popup" src="popup.htm" scrolling="auto" marginwidth='5' marginheight='5'/>
+    		</frameset>
+	  </frameset>
+    <noframes>
+      <body>    
+         <p id="noframes">
+This <b>genealogy report</b> is about <i>Дерево семьи</i>.It contains 141 individuals and 48 families, and also 97 Фото from the family tree. <br /></p><ul>
+<li><a href='toc_individuals.htm#Райская'>Find the Райская family and its 14 ancestors.</a>.</li>
+<li><a href='toc_individuals.htm#Райский'>Search the Райский family and its 12 persons.</a>.</li>
+<li><a href='toc_individuals.htm#Зубенко'>Find the Зубенко family and its 12 persons.</a>.</li>
+<li><a href='toc_individuals.htm#Хоруженко'>Search the Хоруженко family and its 11 people.</a>.</li>
+</ul><p>
+You may also search for the following family names:
+<a href='toc_individuals.htm#Наседкин'>Наседкин</a>, <a href='toc_individuals.htm#Наседкина'>Наседкина</a>, <a href='toc_individuals.htm#Мороз'>Мороз</a>, <a href='toc_individuals.htm#Штановская'>Штановская</a>, <a href='toc_individuals.htm#Маслов'>Маслов</a>, <a href='toc_individuals.htm#Черноусова'>Черноусова</a>, <a href='toc_individuals.htm#Барабаш'>Барабаш</a>, <a href='toc_individuals.htm#Волкотруб'>Волкотруб</a>, <a href='toc_individuals.htm#Штановский'>Штановский</a>, <a href='toc_individuals.htm#Шаронин'>Шаронин</a>, <a href='toc_individuals.htm#Филинов'>Филинов</a>, <a href='toc_individuals.htm#Лупашин'>Лупашин</a>, <a href='toc_individuals.htm#Лейба'>Лейба</a>, <a href='toc_individuals.htm#Бельтюкова'>Бельтюкова</a>, <a href='toc_individuals.htm#Януканис'>Януканис</a>, <a href='toc_individuals.htm#Шкапор'>Шкапор</a>, <a href='toc_individuals.htm#Чумак'>Чумак</a>, <a href='toc_individuals.htm#Черноусов'>Черноусов</a>, <a href='toc_individuals.htm#Червякова'>Червякова</a>, <a href='toc_individuals.htm#Торбочкин'>Торбочкин</a>, <a href='toc_individuals.htm#Тишина'>Тишина</a>, <a href='toc_individuals.htm#Тишин'>Тишин</a>, <a href='toc_individuals.htm#Савчук'>Савчук</a>, <a href='toc_individuals.htm#Сабуров'>Сабуров</a>, <a href='toc_individuals.htm#Пономарев'>Пономарев</a>, <a href='toc_individuals.htm#Пантелусь'>Пантелусь</a>, <a href='toc_individuals.htm#Мироносова'>Мироносова</a>, <a href='toc_individuals.htm#Мироносов'>Мироносов</a>, <a href='toc_individuals.htm#Мачульская'>Мачульская</a>, <a href='toc_individuals.htm#Маслова'>Маслова</a>, <a href='toc_individuals.htm#Маркова'>Маркова</a>, <a href='toc_individuals.htm#Марков'>Марков</a>, <a href='toc_individuals.htm#Лупашина'>Лупашина</a>, <a href='toc_individuals.htm#Кузьмина'>Кузьмина</a>, <a href='toc_individuals.htm#Кондратова'>Кондратова</a>, <a href='toc_individuals.htm#Зимина'>Зимина</a>, <a href='toc_individuals.htm#Ефимов'>Ефимов</a>, <a href='toc_individuals.htm#Дягилев'>Дягилев</a>, <a href='toc_individuals.htm#Гаплюк'>Гаплюк</a>, <a href='toc_individuals.htm#Большакова'>Большакова</a>, <a href='toc_individuals.htm#Бельтюков'>Бельтюков</a>.<br /><br />Copyright © 1998-2011 GenoPro Inc. All rights reserved. Download GenoPro from <a href='http://www.genopro.com/'>http://www.genopro.com/</a>
+         </p>
+      </body>
+    </noframes>
+</frameset>
+</html>

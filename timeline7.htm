@@ -1,0 +1,61 @@
+
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html  xmlns='http://www.w3.org/1999/xhtml'>
+	<head>
+		<meta http-equiv="Content-Language" content="ru"/>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<title></title>
+		<link rel="stylesheet" href="style.css" type="text/css"/>
+		<script type='text/javascript'>
+			Timeline_ajax_url='timeline/ajax/simile-ajax-api.js';
+			Timeline_urlPrefix='timeline/';
+			Timeline_parameters='bundle=true';
+		</script>
+		<script src="timeline/timeline-api.js" type="text/javascript"></script>
+		<script type='text/javascript' src="scripts/jquery.min.js"></script>
+		<script src="scripts/script.js" type="text/javascript"></script>
+		<script  type="text/javascript">
+            SimileAjax.History.enabled = false; // prevent spurious alerts for __History__.html with timelines
+			var tl, json =
+{
+'events' : [
+
+{ 'start' : '27 Nov 1914', 'end' : '21 Jan 1996', 'isDuration' : 'false', 'title' : 'Викторина Ивановна Лупашина (Наседкина) \u202D1914 - 1996\u202C', 'icon' : 'images/gender_F.gif', 'color' : '#DC143C', 'link' : 'ind00009.htm','description' : 'Дата и место рождения:\x20 27 ноября 1914 г на Черноземье. Смерть наступила от несчастного случая, Отравление организма окисью углерода, в 81-летнем возрасте\x20\x20 21 января 1996 г на Чирон.'},
+{ 'start' : '01 Jan 1894', 'end' : '15 Oct 1975', 'isDuration' : 'false', 'title' : 'Иван Федорович Лупашин \u202D1894 - 1975\u202C', 'icon' : 'images/gender_M.gif', 'color' : '#1E90FF', 'link' : 'ind00059.htm','description' : 'Дата рождения:\x20 1894 г. Смерть наступила\x20 в 81-летнем возрасте\x20\x20 15 октября 1975 г.'},{'title' : 'Помощь', 'start' : '22 Jan 1996', 'end' : '21 Jan 2046', 'textColor' : 'black', 'color' : 'white', 'isDuration' : 'false', 'icon' : 'images/info.gif', 'description' : 'Нажмите на шкалу времени и перемещайте ее с помощью мыши влево – вправо или нажмите клавиши: \x27Home\x27 для перемещения в начало, \x27End\x27 для перемещения в конец; \x27Page Up\x27 и \x27Page Down\x27 для перемещения влево – вправо по странице или «стрелки» для плавного движения влево – вправо. Нажмите на персону или на союз для получения информации в сплывающем окне. Нажмите на заголовок в сплывающем окне для получения дополнительной информации о персоне или союзе.'}],
+'nowTag' : ' сейчас',
+'subtitle': 'Фамильная шкала времени: ЛУПАШИНЫ',
+'date' : '21 Jan 1946'}
+  
+			;
+			var tlParam = {
+				data : true,
+				duration : true, 
+				wrapEvents : false
+			};
+			$(function () {
+				timeLineOnLoad(tlParam);
+				window.onresize=timeLineOnResize(tlParam);
+			});
+		</script>
+	<base target="detail"/>
+  
+	</head>
+	<body class='gno-popup'>
+	<div class='curvyboxbackground'>
+ <div class='curvycorners_box'>
+  <div class='curvycorners_top'><div></div></div>
+   <div class='curvycorners_content'>
+
+		<h4 id='subtitle'> </h4>
+		<div class='clear' id='constrainer' style='overflow: auto;'  >
+				<div id="timeline0" style="height: 100%;border: 1px solid #aaa;">
+				</div>
+		</div>
+		   </div>
+  <div class='curvycorners_bottom'><div></div></div>
+ </div>
+</div>
+
+	</body>
+</html>
